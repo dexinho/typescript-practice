@@ -1,13 +1,36 @@
-type Test = {
-  num: number;
-  str: string;
+// Arrays & Tuples
+
+const nArray: number[] = [1, 2, 3];
+const tArray: [number, boolean, string] = [1, false, "hi"];
+
+// Enums
+
+enum Size {
+  Small = 1,
+  Medium,
+  Large,
+}
+
+let mySize: Size = Size.Medium;
+console.log(mySize);
+
+// Objects
+
+let employee: {
+  name: string;
+  date: Date;
+} = {
+  name: "subject",
+  date: new Date(),
 };
 
-const test = ({ a, b }: { a: number; b: number }): Test => {
-  return {
-    num: a + b,
-    str: "a",
-  };
+// Advanced Types & Functions
+
+type CalculateTax = {
+  amount: number;
+  rate: number;
 };
 
-console.log(test({ a: 10, b: 20 }));
+const calculateTax = ({ amount, rate }: CalculateTax): number => {
+  return amount * rate;
+};
