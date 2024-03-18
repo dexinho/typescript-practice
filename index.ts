@@ -34,3 +34,22 @@ type CalculateTax = {
 const calculateTax = ({ amount, rate }: CalculateTax): number => {
   return amount * rate;
 };
+
+const getTemperature = <T>(temp: T) => {
+  return temp;
+};
+
+getTemperature<number>(200);
+
+// Omit
+
+type Customer = {
+  id: number;
+  name: string;
+  value: number;
+};
+
+type Order = Omit<Customer, "id" | "value"> & { date: Date };
+
+const human: Customer = { id: 1, name: "hehe", value: 10 };
+const humanOrder: Order = { name: "hoho", date: new Date() };
