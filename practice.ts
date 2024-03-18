@@ -14,6 +14,12 @@ const calculateTaxes = ({
   if (amount > 1000) return amount * rate;
 };
 
+const identity = <T>(arg: T): T => {
+  return arg;
+};
+
+let output = identity<number>(123); // Type of 'output' will be 'number'
+
 console.log(
   calculateTaxes({
     amount: 10000,
@@ -22,12 +28,3 @@ console.log(
     readOnly: false,
   })
 );
-
-const obj2: CalculateTaxes = {
-  amount: 1,
-  rate: 1,
-  date: new Date(),
-  readOnly: false,
-};
-
-obj2.amount = 10;
