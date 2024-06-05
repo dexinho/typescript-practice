@@ -39,6 +39,7 @@ const getTemperature = <T>(temp: T) => {
   return temp;
 };
 
+getTemperature<string>("200");
 getTemperature<number>(200);
 
 // Omit
